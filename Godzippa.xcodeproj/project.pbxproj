@@ -315,6 +315,7 @@
 				PRODUCT_NAME = Godzippa;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
 			};
 			name = Debug;
 		};
@@ -335,6 +336,7 @@
 				PRODUCT_NAME = Godzippa;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
 			};
 			name = Release;
 		};
