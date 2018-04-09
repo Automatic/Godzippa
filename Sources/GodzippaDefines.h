@@ -1,4 +1,5 @@
-// main.m
+// Godzippa.h
+//
 // Copyright (c) 2012 – 2018 Mattt (http://mat.tt/)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -19,16 +20,24 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-@import Foundation;
-@import Godzippa;
+#ifndef GodzippaDefines_h
+#define GodzippaDefines_h
 
-int main(__unused int argc, __unused const char *argv[]) {
-    @autoreleasepool {
-        NSData *originalData = [@"Look out! It's..." dataUsingEncoding:NSUTF8StringEncoding];
-        NSData *compressedData = [originalData dataByGZipCompressingWithError:nil];
-        NSData *decompressedData = [compressedData dataByGZipDecompressingDataWithError:nil];
-        NSLog(@"%@ %@", [[NSString alloc] initWithData:decompressedData encoding:NSUTF8StringEncoding], @"Godzippa!");
-    }
+#if __has_feature(nullability)
+    #define __GODZIPPA_ASSUME_NONNULL_BEGIN NS_ASSUME_NONNULL_BEGIN
+    #define __GODZIPPA_ASSUME_NONNULL_END   NS_ASSUME_NONNULL_END
+    #define __GODZIPPA_NULLABLE nullable
+#else
+    #define __GODZIPPA_ASSUME_NONNULL_BEGIN
+    #define __GODZIPPA_ASSUME_NONNULL_END
+    #define __GODZIPPA_NULLABLE
+#endif
 
-    return 0;
-}
+#if defined(__has_attribute)
+    #if __has_attribute(swift_name)
+        #define __GODZIPPA_SWIFT_NAME(X) __attribute__((swift_name(#X)))
+    #else
+        #define __GODZIPPA_SWIFT_NAME(X)
+    #endif
+#endif
+#endif /* GodzippaDefines_h */

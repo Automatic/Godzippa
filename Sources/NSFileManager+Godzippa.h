@@ -1,6 +1,6 @@
 // NSFileManager+Godzippa.h
 //
-// Copyright (c) 2012–2015 Mattt Thompson (http://mattt.me/)
+// Copyright (c) 2012 – 2018 Mattt (http://mat.tt/)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -22,6 +22,10 @@
 
 #import <Foundation/Foundation.h>
 
+#import "GodzippaDefines.h"
+
+__GODZIPPA_ASSUME_NONNULL_BEGIN
+
 /**
  Godzippa provides a category on `NSFileManager` to inflate and deflate files using gzip compression.
  */
@@ -42,7 +46,8 @@
  */
 - (BOOL)GZipCompressFile:(NSURL *)sourceFile
    writingContentsToFile:(NSURL *)destinationFile
-                   error:(NSError * __autoreleasing *)error;
+                   error:(NSError * __autoreleasing *)error
+    __GODZIPPA_SWIFT_NAME(gzipCompressFile(at:to:));
 
 /**
  Compresses the specified file at a particular level, writing data to a destination file.
@@ -57,7 +62,8 @@
 - (BOOL)GZipCompressFile:(NSURL *)sourceFile
    writingContentsToFile:(NSURL *)destinationFile
                  atLevel:(int)level
-                   error:(NSError *__autoreleasing *)error;
+                   error:(NSError *__autoreleasing *)error
+    __GODZIPPA_SWIFT_NAME(gzipCompressFile(at:to:level:));
 
 ///--------------------
 /// @name Decompressing
@@ -71,6 +77,9 @@
  */
 - (BOOL)GZipDecompressFile:(NSURL *)sourceFile
      writingContentsToFile:(NSURL *)destinationFile
-                     error:(NSError * __autoreleasing *)error;
+                     error:(NSError * __autoreleasing *)error
+    __GODZIPPA_SWIFT_NAME(gzipDecompressFile(at:to:));
 
 @end
+
+__GODZIPPA_ASSUME_NONNULL_END
