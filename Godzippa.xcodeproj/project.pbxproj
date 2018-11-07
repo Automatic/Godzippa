@@ -25,9 +25,6 @@
 		4320A8561BB2030C00AE91E2 /* NSData+Godzippa.h in Headers */ = {isa = PBXBuildFile; fileRef = 4320A8311BB1FF4100AE91E2 /* NSData+Godzippa.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4320A8771BB207D100AE91E2 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4320A8761BB207D100AE91E2 /* libz.tbd */; };
 		4320A8791BB207DC00AE91E2 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4320A8781BB207DC00AE91E2 /* libz.tbd */; };
-		F80740962065504400107A43 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F80740912065504400107A43 /* Info.plist */; };
-		F80740972065504400107A43 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F80740912065504400107A43 /* Info.plist */; };
-		F80740982065504400107A43 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F80740912065504400107A43 /* Info.plist */; };
 		F80740A52065508E00107A43 /* Godzippa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4320A8281BB1FEDB00AE91E2 /* Godzippa.framework */; };
 		F80740AB206550C400107A43 /* GodzippaFileManagerTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = F80740902065504400107A43 /* GodzippaFileManagerTestCase.m */; };
 		F80740AC206550C400107A43 /* GodzippaDataTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = F80740922065504400107A43 /* GodzippaDataTestCase.m */; };
@@ -409,7 +406,7 @@
 		4320A81D1BB1FE2D00AE91E2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 1010;
 				TargetAttributes = {
 					4320A8271BB1FEDB00AE91E2 = {
 						CreatedOnToolsVersion = 7.0;
@@ -458,7 +455,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F80740962065504400107A43 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,7 +462,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F80740972065504400107A43 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,7 +469,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F80740982065504400107A43 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -592,11 +586,13 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
@@ -623,11 +619,13 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
@@ -807,6 +805,7 @@
 				PRODUCT_NAME = Godzippa;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -860,6 +859,7 @@
 				PRODUCT_NAME = Godzippa;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -1081,7 +1081,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mattt.Godzippa-macOS-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
@@ -1114,7 +1114,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mattt.Godzippa-macOS-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
+				SDKROOT = iphoneos;
 			};
 			name = Release;
 		};
